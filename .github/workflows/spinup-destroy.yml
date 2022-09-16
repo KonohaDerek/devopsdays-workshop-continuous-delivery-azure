@@ -56,6 +56,10 @@ jobs:
         if: success()
         run: |
           az provider register --namespace Microsoft.App 
+      - name: Register the Microsoft.OperationalInsights namespace
+        if: success()
+        run: |
+          az provider register -n Microsoft.OperationalInsights
       - name: Create the container app environment
         if: success()
         run: |
