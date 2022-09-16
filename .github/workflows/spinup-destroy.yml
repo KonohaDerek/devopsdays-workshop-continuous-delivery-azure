@@ -14,7 +14,7 @@ env:
   #################################################
   #################################################
   ### REPLACE <username> WITH GH USERNAME         ###
-  AZURE_CONTAINER_APP_NAME: KonohaDerek-ttt-app
+  AZURE_CONTAINER_APP_NAME: konohaderek-ttt-app
   #################################################
 
 jobs:
@@ -56,10 +56,6 @@ jobs:
         if: success()
         run: |
           az provider register --namespace Microsoft.App 
-      - name: Register the Microsoft.OperationalInsights namespace
-        if: success()
-        run: |
-          az provider register -n Microsoft.OperationalInsights --wait 
       - name: Create the container app environment
         if: success()
         run: |
